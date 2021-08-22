@@ -142,7 +142,7 @@ public class BasePage {
     protected void fillInputField(WebElement field, String value) {
         waitUtilElementToBeClickable(field).click();
         field.sendKeys(Keys.chord(Keys.CONTROL, "a"), value);
-        delay(500);
+//        delay(500);
     }
 
     /**
@@ -153,7 +153,6 @@ public class BasePage {
      */
     protected void fillSelectField(List<WebElement> sroki, String value) {
         for(WebElement element : sroki) {
-//            wait.until(ExpectedConditions.stalenessOf(element));
             if(element.getAttribute("outerText").replaceAll("\\D", "").equals(value)) {
                 waitUtilElementToBeClickable(element).click();
             }

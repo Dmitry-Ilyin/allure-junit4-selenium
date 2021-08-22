@@ -2,7 +2,6 @@ package org.example.framework.pages;
 
 import io.qameta.allure.Step;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -31,7 +30,7 @@ public class DepositPage extends BasePage {
     @FindBy(xpath = "//input[@name='replenish']")
     private WebElement payment;
 
-    @FindBy(xpath = "//div[@class='calculator__content']//div[6]//label")
+    @FindBy(xpath = "//div[@class='calculator__content']//label[@class='calculator__check-block']")
     private List<WebElement> extraOptions;
 
     @FindBy(xpath = "//span[@class='js-calc-amount']")
@@ -79,7 +78,6 @@ public class DepositPage extends BasePage {
         }
             Assert.assertEquals("Поле '" + nameField + "' было заполнено некорректно",
                     val, element.getAttribute("value").replaceAll("\\s+", ""));
-
         return this;
     }
     @Step("Устанавливаем срок '{value}' ")
@@ -113,7 +111,7 @@ public class DepositPage extends BasePage {
      *
      * @return DepositPage - т.е. остаемся на этой странице
      */
-    @Step("проверить страницу")
+    @Step("проверка открытия страницы 'Вклады' ")
     public DepositPage checkOpenDepositPage() {
         Assert.assertEquals("Заголовок отсутствует/не соответствует требуемому", "Вклады", currentPage.getText());
         return this;

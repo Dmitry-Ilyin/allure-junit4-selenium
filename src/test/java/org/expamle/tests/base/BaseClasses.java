@@ -38,10 +38,6 @@ public class BaseClasses {
         driverManager.getDriver().get(TestPropManager.getTestPropManager().getProperty(PropConst.BASE_URL));
     }
 
-    @After
-    public void After() {
-        driverManager.quitDriver();
-    }
 
     @AfterClass
     public static void afterClass() {

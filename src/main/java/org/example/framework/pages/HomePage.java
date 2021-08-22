@@ -1,7 +1,6 @@
 package org.example.framework.pages;
 
 import io.qameta.allure.Step;
-import org.example.framework.managers.PageManager;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -28,10 +27,10 @@ public class HomePage extends BasePage {
             waitUtilElementToBeVisible(tab);
             if (tab.getAttribute("outerText").equalsIgnoreCase(value)) {
                 waitUtilElementToBeClickable(tab.findElement(By.xpath("./../a[1]"))).click();
-                return PageManager.getPageManager().getDepositPage();
+                return pageManager.getDepositPage();
             }
         }
         Assert.fail("Пункта "+ value +" на стартовой странице не существует");
-        return PageManager.getPageManager().getDepositPage();
+        return pageManager.getDepositPage();
     }
 }

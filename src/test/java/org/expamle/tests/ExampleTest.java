@@ -42,7 +42,6 @@ public class ExampleTest extends BaseClasses {
                 .fillField("Ежемесячное пополнение", replenishment)
                 .selectExtraOptions("Ежемесячная капитализация")
                 .checkParameter();
-
     }
 }
 
