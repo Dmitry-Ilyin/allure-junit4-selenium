@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>final-work-one</artifactId>
+    <artifactId>allure-junit4-selenium</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
